@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.thiago.core.InvokedMethodListener;
 import com.thiago.page.PageGoogle;
+import com.thiago.page.login.PageGuruLogin;
  
 @Listeners(InvokedMethodListener.class)
 public class GoogleSearchTest{
@@ -14,9 +15,5 @@ public class GoogleSearchTest{
     	new PageGoogle().openPage(PageGoogle.class, "http://www.google.com").buscarNoGoogle("selenium");
     	new PageGoogle().buscarNoGoogle("oi");
     }
-    @Test
-    public void google1() throws Exception {
-    	new PageGoogle().openPage(PageGoogle.class, "http://www.google.com").buscarNoGoogle("selenium");
-    	new PageGoogle().buscarNoGoogle("oi");
-    }
+
 }

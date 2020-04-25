@@ -23,6 +23,7 @@
 			<version>6.14.3</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-testng</artifactId>

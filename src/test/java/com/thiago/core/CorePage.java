@@ -11,6 +11,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -109,6 +110,14 @@ public abstract class CorePage<T> {
 		}
 		return alerta;
 	}
+	
+	public void dragAndDrop(WebElement origem, WebElement destino) {
+		Actions action = new Actions(this.driver);
+		Action dragAndDrop = action.clickAndHold(origem).moveToElement(destino)
+				.release().build();
+		dragAndDrop.perform();
+	}
+	
 	public void aguardarElementoVisivel(WebElement element){
 		try {
 			WebDriverWait driverWait = new WebDriverWait(this.driver, LOAD_TIMEOUT);
